@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>linux基础和Linux安装</title>
+    <link href="/2022/07/18/linux%E5%9F%BA%E7%A1%80%E5%92%8CLinux%E5%AE%89%E8%A3%85/"/>
+    <url>/2022/07/18/linux%E5%9F%BA%E7%A1%80%E5%92%8CLinux%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-冯诺依曼体系"><a href="#1-冯诺依曼体系" class="headerlink" title="1.冯诺依曼体系"></a>1.冯诺依曼体系</h1><ul><li>运算器：数学和逻辑运算</li><li>控制器：指挥系统</li><li>存储器：存储信息</li><li>输入设备：接收外部信息</li><li>输出设备：输出计算机内部信息到外部设备</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>看完这篇还敢说你不会git生成ssh密钥</title>
     <link href="/2022/07/13/git-ssh/"/>
     <url>/2022/07/13/git-ssh/</url>
