@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Linux基础入门</title>
+    <link href="/2022/07/21/Linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"/>
+    <url>/2022/07/21/Linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-基础使用命令"><a href="#1-基础使用命令" class="headerlink" title="1.基础使用命令"></a>1.基础使用命令</h1><ul><li>查看网络ip地址</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">ip <span class="hljs-selector-tag">a</span><br></code></pre></td></tr></table></figure><p><img src="/../img/1658410435937.png" alt="Rocky8.6"></p><p><img src="/../img/1658410871193.png" alt="ubuntu2004"></p><ul><li>重启</li></ul><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">reboot</span><br></code></pre></td></tr></table></figure><ul><li><p>ubuntu使用xshell-root账户进行远程登录修改方法</p><ul><li>切换到root账户</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo -<span class="hljs-selector-tag">i</span><br></code></pre></td></tr></table></figure><p><img src="/../img/1658411472195.png" alt="1658411472195"></p><ul><li>设置密码</li></ul><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">passwd</span> 用户名  <br></code></pre></td></tr></table></figure><p><img src="/../img/1658469211139.png" alt="1658469211139"></p></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>linux基础和Linux安装</title>
     <link href="/2022/07/18/linux%E5%9F%BA%E7%A1%80%E5%92%8CLinux%E5%AE%89%E8%A3%85/"/>
     <url>/2022/07/18/linux%E5%9F%BA%E7%A1%80%E5%92%8CLinux%E5%AE%89%E8%A3%85/</url>
