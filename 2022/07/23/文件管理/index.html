@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://itcttme96.github.io/img/1658675633346.png">
 <meta property="article:published_time" content="2022-07-23T08:37:00.000Z">
-<meta property="article:modified_time" content="2022-07-24T15:33:34.422Z">
+<meta property="article:modified_time" content="2022-07-25T12:32:17.537Z">
 <meta property="article:author" content="yuankun">
 <meta property="article:tag" content="hexo,theme,fluid">
 <meta name="twitter:card" content="summary_large_image">
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k 字
+          13k 字
         
       </span>
     
@@ -244,7 +244,7 @@
         
         
         
-          101 分钟
+          105 分钟
         
       </span>
     
@@ -733,7 +733,18 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chgrp</span> yuankun data.log<br></code></pre></td></tr></table></figure>
 
 <p><img src="/../img/1658673362886.png" srcset="/img/loading.gif" lazyload alt="1658673362886"></p>
-<h3 id="7-6-2文件权限"><a href="#7-6-2文件权限" class="headerlink" title="7.6.2文件权限"></a>7.6.2文件权限</h3><p><img src="/../img/1658675633346.png" srcset="/img/loading.gif" lazyload alt="1658675633346"></p>
+<h3 id="7-6-2文件权限"><a href="#7-6-2文件权限" class="headerlink" title="7.6.2文件权限"></a>7.6.2文件权限</h3><p>每个文件针对每类访问者都定义了三种权限</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">r</span> Readable <span class="hljs-number">4</span><br><span class="hljs-attribute">w</span> Writable <span class="hljs-number">2</span><br><span class="hljs-attribute">x</span> eXcutable <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>对文件的权限</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">r</span> 可使用文件查看类工具，比如：<span class="hljs-built_in">cat</span>，可以获取其内容<br>w 可修改其内容,文件的是否被删除和文件的权限无关<br>x 可以把此文件提请内核启动为一个进程，即可以执行（运行）此文件（此文件的内容必须是可执行）<br>文件权限常见组合<br><span class="hljs-literal">---</span> <span class="hljs-number">0</span><br><span class="hljs-built_in">r</span> <span class="hljs-number">4</span><br><span class="hljs-built_in">r</span><span class="hljs-literal">-x</span> <span class="hljs-number">5</span><br>rw <span class="hljs-number">6</span><br>rwx <span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
+
+<p>对目录的权限</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs llvm">r 可以使用ls查看此目录中文件名列表<span class="hljs-punctuation">,</span>但无法看到文件的属性meta信息<span class="hljs-punctuation">,</span>包括inode号<span class="hljs-punctuation">,</span>不能查看文件的<br>内容<br>w 可在此目录中创建文件，也可删除此目录中的文件，而和此被删除的文件的权限无关<br><span class="hljs-keyword">x</span> 可以cd进入此目录，可以使用ls -l file或stat file 查看此目录中指定文件的元数据，当预先知<br>道文件名称时<span class="hljs-punctuation">,</span>也可以查看文件的内容<span class="hljs-punctuation">,</span>属于目录的可访问的最小权限<br>X 分配给目录或有部分<span class="hljs-keyword">x</span>权限的文件的<span class="hljs-keyword">x</span>权限，对无任意<span class="hljs-keyword">x</span>权限的文件则不会分配<span class="hljs-keyword">x</span>权限<br>目录权限常见组合<br>- 不能访问目录<br>r-<span class="hljs-keyword">x</span> 只读目录<br>rwx 可读也可写目录<br></code></pre></td></tr></table></figure>
+
+<p>面试题：Linux中的目录和文件的权限区别？分别说明读，写和执行权限的区别?</p>
+<p>修改文件权限chmod</p>
+<p>面试题：执行 cp &#x2F;etc&#x2F;issue &#x2F;data&#x2F;dir&#x2F; 所需要的最小权限？</p>
 
                 
               </div>
@@ -793,6 +804,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/25/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%8F%8A%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/" title="权限管理及文本编辑工具">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">权限管理及文本编辑工具</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
