@@ -16,24 +16,24 @@
   <meta name="author" content="yuankun">
   <meta name="keywords" content="hexo,theme,fluid">
   
-    <meta name="description" content="这是摘要">
+    <meta name="description" content="1.文本编辑工具VIM;2.各种文本工具;3.基本正则表达式和扩展;4.文本处理三剑客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="权限管理及文本编辑工具">
-<meta property="og:url" content="http://itcttme96.github.io/2022/07/25/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%8F%8A%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:title" content="文本处理工具和正则表达式">
+<meta property="og:url" content="http://itcttme96.github.io/2022/07/26/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E5%92%8C%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="itcttme96-blog">
-<meta property="og:description" content="这是摘要">
+<meta property="og:description" content="1.文本编辑工具VIM;2.各种文本工具;3.基本正则表达式和扩展;4.文本处理三剑客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://itcttme96.github.io/img/1658756891810.png">
-<meta property="article:published_time" content="2022-07-25T12:34:34.000Z">
-<meta property="article:modified_time" content="2022-07-26T14:49:12.816Z">
+<meta property="og:image" content="http://itcttme96.github.io/img/1658837805422.png">
+<meta property="article:published_time" content="2022-07-26T12:09:30.000Z">
+<meta property="article:modified_time" content="2022-07-26T14:43:34.558Z">
 <meta property="article:author" content="yuankun">
 <meta property="article:tag" content="Linux从入门到放弃">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://itcttme96.github.io/img/1658756891810.png">
+<meta name="twitter:image" content="http://itcttme96.github.io/img/1658837805422.png">
   
   
   
-  <title>权限管理及文本编辑工具 - itcttme96-blog</title>
+  <title>文本处理工具和正则表达式 - itcttme96-blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="权限管理及文本编辑工具"></span>
+            <span id="subtitle" data-typed-text="文本处理工具和正则表达式"></span>
           
         </div>
 
@@ -221,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-25 20:34" pubdate>
-          2022年7月25日 晚上
+        <time datetime="2022-07-26 20:09" pubdate>
+          2022年7月26日 晚上
         </time>
       </span>
     
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          396 字
+          1.4k 字
         
       </span>
     
@@ -244,7 +244,7 @@
         
         
         
-          4 分钟
+          12 分钟
         
       </span>
     
@@ -282,47 +282,92 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">权限管理及文本编辑工具</h1>
+            <h1 style="display: none">文本处理工具和正则表达式</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-新建文件和目录的默认权限"><a href="#1-新建文件和目录的默认权限" class="headerlink" title="1.新建文件和目录的默认权限"></a>1.新建文件和目录的默认权限</h1><p>umask 的值可以用来保留在创建文件权限<br>实现方式：</p>
-<ul>
-<li>新建文件的默认权限: 666-umask，如果所得结果某位存在执行（奇数）权限，则将其权限+1,偶<br>数不变</li>
-<li>新建目录的默认权限: 777-umask</li>
-</ul>
-<p>非特权用户umask默认是002</p>
-<p>root的umask默认是022</p>
-<p>查看umask</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">umask</span><br><span class="hljs-comment">#模式方式显示</span><br><span class="hljs-built_in">umask</span> –S<br><span class="hljs-comment">#输出可被调用</span><br><span class="hljs-built_in">umask</span> –p<br></code></pre></td></tr></table></figure>
+                <h1 id="1-文本编辑工具之神VIM"><a href="#1-文本编辑工具之神VIM" class="headerlink" title="1.文本编辑工具之神VIM"></a>1.文本编辑工具之神VIM</h1><h2 id="1-1使用vim初步"><a href="#1-1使用vim初步" class="headerlink" title="1.1使用vim初步"></a>1.1使用vim初步</h2><h3 id="1-1-1vim命令格式"><a href="#1-1-1vim命令格式" class="headerlink" title="1.1.1vim命令格式"></a>1.1.1vim命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 常用">vim [option]··· FILE ···<br></code></pre></td></tr></table></figure>
 
-<p>修改umask</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">umask</span> <span class="hljs-comment">#bash</span><br></code></pre></td></tr></table></figure>
+<p>常用选项：</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">+# 打开文件后，让光标处于第#行的行首，+默认行尾<br></code></pre></td></tr></table></figure>
 
 <p>范例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash<br><span class="hljs-built_in">umask</span> 002<br><span class="hljs-built_in">umask</span> u=rw,g=r,o=<br></code></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">vim</span> +<span class="hljs-number">10</span> passwd<br></code></pre></td></tr></table></figure>
 
-<p>持久保存umask:</p>
+<p><img src="/../img/1658842039807.png" srcset="/img/loading.gif" lazyload alt="1658842039807"></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs vim">+/PATTERN 让光标处于第一个被PATTERN匹配到的行行首<br>-<span class="hljs-keyword">b</span> <span class="hljs-keyword">file</span> 二进制方式打开文件<br>-d file1 file2… 比较多个文件，相当于 vimdiff<br>-<span class="hljs-keyword">m</span> <span class="hljs-keyword">file</span> 只读打开文件<br>-<span class="hljs-keyword">e</span> <span class="hljs-keyword">file</span> 直接进入<span class="hljs-keyword">ex</span>模式，相当于执行<span class="hljs-keyword">ex</span> <span class="hljs-keyword">file</span><br>-<span class="hljs-keyword">y</span> <span class="hljs-keyword">file</span> Easy <span class="hljs-keyword">mode</span> (like <span class="hljs-string">&quot;evim&quot;</span>, modeless)，直接可以操作文件，ctrl+<span class="hljs-keyword">o</span>:<span class="hljs-keyword">wq</span>|q! 保存和不<br>保存退出<br></code></pre></td></tr></table></figure>
+
+<p>说明：</p>
 <ul>
-<li>全局设置：&#x2F;etc&#x2F;bashrc</li>
-<li>用户设置：~&#x2F;.bashrc</li>
+<li>如果该文件存在，文件被打开并显示内容</li>
+<li>如果该文件不存在，当编辑后第一次存盘时创建它</li>
 </ul>
-<p>创建临时权限为000的文件三种方法：</p>
+<h3 id="1-1-2三种主要模式"><a href="#1-1-2三种主要模式" class="headerlink" title="1.1.2三种主要模式"></a>1.1.2三种主要模式</h3><p>三种常见模式：</p>
 <ul>
-<li>方法一</li>
+<li><p>命令或普通(Normal)模式：默认模式，可以实现移动光标，剪切&#x2F;粘贴文本</p>
+</li>
+<li><p>插入(Insert)或编辑模式：用于修改文本</p>
+</li>
+<li><p>扩展命令(extended command )或命令(末)行模式：保存，退出等</p>
+</li>
+<li><p>命令模式–》插入模式</p>
+</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> a.txt;<span class="hljs-built_in">chmod</span> 000 a.txt<br></code></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">i</span> insert, 在光标所在处输入<br><span class="hljs-selector-tag">I</span> 在当前光标所在行的行首输入<br><span class="hljs-selector-tag">a</span> append, 在光标所在处后面输入<br><span class="hljs-selector-tag">A</span> 在当前光标所在行的行尾输入<br>o 在当前光标所在行的下方打开一个新行<br>O 在当前光标所在行的上方打开一个新行<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>方法二</li>
+<li>插入模式 — ESC—–&gt; 命令模式</li>
+<li>命令模式 —- : —-&gt; 扩展命令模式</li>
+<li>扩展命令模式 —-ESC,enter—-&gt; 命令模式</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">umask</span> 777;<span class="hljs-built_in">touch</span> a.txt;<span class="hljs-built_in">umask</span> 022<br></code></pre></td></tr></table></figure>
+<p>范例: 插入颜色字符</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>切换至插入模式<br><span class="hljs-symbol">2 </span>按ctrl+v+[ 三个键,显示^[<br><span class="hljs-symbol">3 </span>后续输入颜色信息,如:^[[<span class="hljs-number">32</span>mhello^[[<span class="hljs-number">0</span>m<br><span class="hljs-symbol">4 </span>切换至扩展命令模式,保存退出<br><span class="hljs-symbol">5 </span>cat 文件可以看到下面显示<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../img/1658842714254.png" srcset="/img/loading.gif" lazyload alt="1658842714254"></p>
+<p><img src="/../img/1658842736134.png" srcset="/img/loading.gif" lazyload alt="1658842736134"></p>
+<h2 id="1-2扩展命令模式"><a href="#1-2扩展命令模式" class="headerlink" title="1.2扩展命令模式"></a>1.2扩展命令模式</h2><p>按“:”（冒号）进入Ex模式，创建一个命令提示符：处于底部的屏幕左侧</p>
+<h3 id="1-2-1扩展模式基本命令"><a href="#1-2-1扩展模式基本命令" class="headerlink" title="1.2.1扩展模式基本命令"></a>1.2.1扩展模式基本命令</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css">w 写（存）磁盘文件<br>wq 写入并退出<br>x 写入并退出<br>X 加密<br><span class="hljs-selector-tag">q</span> 退出<br><span class="hljs-selector-tag">q</span>！ 不存盘退出，即使更改都将丢失<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>方法三</li>
+<li>读取文件内容到当前文件中</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">(<span class="hljs-built_in">umask</span> 777;<span class="hljs-built_in">touch</span> a.txt)<br></code></pre></td></tr></table></figure>
+<p>用法：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">r</span> filename	<span class="hljs-comment"># 读文件内容到当前文件中</span><br></code></pre></td></tr></table></figure>
+
+<p>范例：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs less"># 将当前目录下的<span class="hljs-selector-tag">b</span>文件的内容读取到当前文件中<br><span class="hljs-selector-tag">vim</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.txt</span><br>:<span class="hljs-selector-tag">r</span> <span class="hljs-selector-tag">b</span><span class="hljs-selector-class">.txt</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>将当前文件内容写入另一个文件</li>
+</ul>
+<p>用法：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">w</span> filename <span class="hljs-comment"># 将当前文件内容写入另一个文件</span><br></code></pre></td></tr></table></figure>
+
+<p>范例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"># 将当前文件(<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.txt</span>文件)内容写入到<span class="hljs-selector-tag">b</span><span class="hljs-selector-class">.txt</span>中去<br>vim <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.txt</span><br>w c<span class="hljs-selector-class">.txt</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>执行命令</li>
+</ul>
+<p>用法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">!<span class="hljs-built_in">command</span>	<span class="hljs-comment">#执行命令</span><br></code></pre></td></tr></table></figure>
+
+<p>范例：</p>
+<p><img src="/../img/1658844469691.png" srcset="/img/loading.gif" lazyload alt="1658844469691"></p>
+<ul>
+<li>读入命令的输入</li>
+</ul>
+<p>用法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">r!<span class="hljs-built_in">command</span>	<span class="hljs-comment">#读入命令的输入</span><br></code></pre></td></tr></table></figure>
+
+<p>范例：执行hostname命令输入到当前文件中</p>
+<p><img src="/../img/1658844624368.png" srcset="/img/loading.gif" lazyload alt="1658844624368"></p>
+<h3 id="1-2-2地址定界"><a href="#1-2-2地址定界" class="headerlink" title="1.2.2地址定界"></a>1.2.2地址定界</h3><p>格式：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">:start_pos,end_pos <span class="hljs-keyword">CMD</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="1-2-2-1地址定界格式"><a href="#1-2-2-1地址定界格式" class="headerlink" title="1.2.2.1地址定界格式"></a>1.2.2.1地址定界格式</h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs clean"># #具体第#行，例如<span class="hljs-number">2</span>表示第<span class="hljs-number">2</span>行<br>#,# #从左侧#表示起始行，到右侧#表示结尾行<br>#,+# #从左侧#表示的起始行，加上右侧#表示的行数，范例：<span class="hljs-number">2</span>,+<span class="hljs-number">3</span> 表示<span class="hljs-number">2</span>到<span class="hljs-number">5</span>行<br>. #当前行<br>$ #最后一行<br>.,$<span class="hljs-number">-1</span> #当前行到倒数第二行<br>% #全文, 相当于<span class="hljs-number">1</span>,$<br>/pattern/ #从当前行向下查找，直到匹配pattern的第一行,即:正则表达式<br>/pat1/,/pat2/ #从第一次被pat1模式匹配到的行开始，一直到第一次被pat2匹配到的行结束<br>#,/pat/ #从指定行开始，一直找到第一个匹配pattern的行结束<br>/pat/,$ #向下找到第一个匹配patttern的行到整个文件的结尾的所有行<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -347,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>权限管理及文本编辑工具</div>
-      <div>http://itcttme96.github.io/2022/07/25/权限管理及文本编辑工具/</div>
+      <div>文本处理工具和正则表达式</div>
+      <div>http://itcttme96.github.io/2022/07/26/文本处理工具和正则表达式/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +405,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月25日</div>
+          <div>2022年7月26日</div>
         </div>
       
       
@@ -390,18 +435,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/26/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E5%92%8C%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="文本处理工具和正则表达式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">文本处理工具和正则表达式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/23/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="Linux文件管理">
-                        <span class="hidden-mobile">Linux文件管理</span>
+                      <a href="/2022/07/25/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%8F%8A%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/" title="权限管理及文本编辑工具">
+                        <span class="hidden-mobile">权限管理及文本编辑工具</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
